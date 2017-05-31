@@ -159,7 +159,7 @@ public class MyMap<K,V> implements Map<K,V>
      * @param value -> valor
      */
     private void addEntry(K key, V value){
-        if(size >= table.length * 3/4){
+        if(size >= table.length * 1/2){
             Entry<K,V>[] tmp = table;
             size = 0;
             table = Arrays.copyOf(table, table.length * 2);
