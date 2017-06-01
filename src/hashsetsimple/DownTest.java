@@ -34,29 +34,7 @@ public class DownTest extends Test
                     this.comprobar_que(!set.contains(c.toString()));
                 }                        
             }
-        }
-        private void probando_borrado_total() throws Exception{
-            set.clear();
-            for (Object obj : restart()) {
-                set.add(obj.toString());
-            }
-            java.util.ArrayList<String>c = new java.util.ArrayList();
-            c.add("Deborah");
-            c.add("Tommy");
-            c.add("Denisse");
-            this.comprobar_que(set.removeAll(c));
-        }
-        private void probando_retencion_total() throws Exception{
-            set.clear();
-            for (Object obj : restart()) {
-                set.add(obj.toString());
-            }
-            java.util.ArrayList<String>c = new java.util.ArrayList();
-            c.add("Deborah");
-            c.add("Lidia");
-            c.add("Agustin");
-            this.comprobar_que(set.retainAll(c));
-        }
+        }                
     //</editor-fold>
     @Override
     void test() {
@@ -67,8 +45,6 @@ public class DownTest extends Test
             probando_borrado(elem_1(), new Object[]{"Deborah"});
             probando_borrado(elem_2(), new Object[]{"Deborah"});
             probando_borrado(elem_3(), new Object[]{"Deborah"});
-            probando_borrado_total();
-            probando_retencion_total();
         } catch(Exception ex){
             ex.printStackTrace();
         }

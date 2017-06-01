@@ -60,12 +60,15 @@ public class MySet<E> implements Set<E>
     }
     @Override
     public boolean containsAll(Collection<?> c) {
-        for(Object e : c){
-            if(!this.contains((E)e)){
-                return false;
+        if(c.size() > 0){
+            for(Object e : c){
+                if(!this.contains((E)e)){
+                    return false;
+                }
             }
+            return true;
         }
-        return true;
+        return false;
     }
     /*----------------------------------------------------------*/    
     @Override
@@ -75,9 +78,9 @@ public class MySet<E> implements Set<E>
     @Override
     public boolean addAll(Collection<? extends E> c) {
         if(c.size() > 0){
-            c.forEach((obj) -> {
+            for(E obj : c){
                 this.add(obj);
-            });
+            }
             return true;
         }
         return false;
@@ -90,9 +93,11 @@ public class MySet<E> implements Set<E>
     @Override
     public boolean removeAll(Collection<?> c) {
         if(c.size() > 0){
-            c.forEach((obj) -> {
-                map.remove((E)obj);
-            });
+            for(Object obj : c){
+                if(this.contains((E)obj)){
+                    map.remove((E)obj);
+                }
+            }
             return true;
         }
         return false;
@@ -100,15 +105,14 @@ public class MySet<E> implements Set<E>
     /*----------------------------------------------------------*/    
     @Override
     public boolean retainAll(Collection<?> c) {
-        boolean changed = false;      
         if(c.size() > 0){
-            for(Object obj : c) {
-                if(!this.contains((E)obj)){
-                    this.remove((E)obj);
-                    changed = true;
+            for(E e : map.keySet()) {
+                if(!c.contains(e)){
+                    this.remove(e);
                 }
             }
+            return true;
         }
-        return changed;
+        return false;
     }            
 }

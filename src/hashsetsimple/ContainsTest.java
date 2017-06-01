@@ -29,20 +29,6 @@ public class ContainsTest extends Test
             this.comprobar_que(!set.contains("Pepe"));
             this.comprobar_que(!set.contains("Luis"));            
         }
-        private void probando_verificacion_total_verdadera() throws Exception{
-            java.util.ArrayList<String> c = new java.util.ArrayList();
-            c.add("Tommy");
-            c.add("Manuela");
-            c.add("Denisse");
-            this.comprobar_que(set.containsAll(c));
-        }
-        private void probando_verificacion_total_falsa() throws Exception{
-            java.util.ArrayList<String> c = new java.util.ArrayList();
-            c.add("Tommy");
-            c.add("Kaiba");
-            c.add("Luis");
-            this.comprobar_que(!set.containsAll(c));
-        }
     //</editor-fold>
     @Override
     void test() {
@@ -50,11 +36,8 @@ public class ContainsTest extends Test
             this.probando_verificacion_normal();
             this.probando_verificacion_con_nulas_que_no_debería_obtener_nada();
             this.probando_verificacion_con_inexistentes_que_debería_dar_falso();
-            this.probando_verificacion_total_verdadera();
-            this.probando_verificacion_total_falsa();
         } catch(Exception ex){
             ex.printStackTrace();
         }
-    }
-    
+    }    
 }

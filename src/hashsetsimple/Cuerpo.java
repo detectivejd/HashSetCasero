@@ -13,5 +13,13 @@ public class Cuerpo
         t1.test();
         t1 = new ToArrayTest();
         t1.test();
+        t1 = new UnionTest();
+        t1.test();
+        t1 = new DifferenceTest();
+        t1.test();
+        t1 = new IntersectionTest();
+        t1.test();
+        t1 = new SubSetTest();
+        t1.test();
     }    
 }
