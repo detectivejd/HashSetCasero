@@ -1,4 +1,7 @@
-package hashsetsimple;
+package hashsetsimple.test;
+
+import hashsetsimple.structs.MySet;
+
 public class UpTest extends Test
 {
     MySet<String> set;
@@ -35,10 +38,16 @@ public class UpTest extends Test
             for(String s : set){
                 this.comprobar_que(set.contains(s));
             }
+            /*
+            set.forEach((s) -> {
+                System.out.println(s);
+            });
+            System.out.println("-----------------------------------");
+            */
         }
     //</editor-fold>
     @Override
-    void test() {
+    public void test() {
         try {
             probando_insercion(this.restart());
             probando_insercion(this.nullset());

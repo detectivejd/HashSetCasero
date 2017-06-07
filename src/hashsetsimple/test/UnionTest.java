@@ -1,4 +1,7 @@
-package hashsetsimple;
+package hashsetsimple.test;
+
+import hashsetsimple.structs.MySet;
+
 public class UnionTest extends Test
 {
     MySet<String> set;
@@ -54,7 +57,7 @@ public class UnionTest extends Test
         }
     //</editor-fold>
     @Override
-    void test() {
+    public void test() {
         try {
             this.probando_union_normal();
             this.probando_union_S1_vacio();

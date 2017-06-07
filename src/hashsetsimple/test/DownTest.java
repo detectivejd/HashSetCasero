@@ -1,4 +1,7 @@
-package hashsetsimple;
+package hashsetsimple.test;
+
+import hashsetsimple.structs.MySet;
+
 public class DownTest extends Test
 {
     MySet<String> set;
@@ -34,10 +37,15 @@ public class DownTest extends Test
                     this.comprobar_que(!set.contains(c.toString()));
                 }                        
             }
+            /*
+            set.forEach((s) -> {
+                System.out.println(s);
+            });
+            System.out.println("-----------------------------------");*/
         }                
     //</editor-fold>
     @Override
-    void test() {
+    public void test() {
         try {
             probando_borrado(restart(), new Object[]{"Deborah","Franco","Denisse"});
             probando_borrado(restart(), new Object[]{ null });

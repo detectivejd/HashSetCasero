@@ -1,4 +1,7 @@
-package hashsetsimple;
+package hashsetsimple.test;
+
+import hashsetsimple.structs.MySet;
+
 public class ContainsTest extends Test
 {
     MySet<String> set;
@@ -31,7 +34,7 @@ public class ContainsTest extends Test
         }
     //</editor-fold>
     @Override
-    void test() {
+    public void test() {
         try {
             this.probando_verificacion_normal();
             this.probando_verificacion_con_nulas_que_no_debería_obtener_nada();

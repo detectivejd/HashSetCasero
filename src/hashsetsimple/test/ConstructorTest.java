@@ -1,4 +1,8 @@
-package hashsetsimple;
+package hashsetsimple.test;
+
+import hashsetsimple.structs.MyMap;
+import hashsetsimple.structs.MySet;
+
 public class ConstructorTest extends Test
 {
     private void creando_set_vacio() throws Exception{
@@ -63,7 +67,7 @@ public class ConstructorTest extends Test
         this.comprobar_que(set.size() == 4);
     }
     @Override
-    void test() {
+    public void test() {
         try {
             this.creando_set_vacio();
             this.creando_set_normal();

@@ -1,4 +1,4 @@
-package hashsetsimple;
+package hashsetsimple.test;
 public abstract class Test
 {   
     protected void comprobar_que(boolean condition) throws Exception{        
@@ -6,5 +6,5 @@ public abstract class Test
             throw new Exception();
         }
     }
-    abstract void test();
+    public abstract void test();
 }

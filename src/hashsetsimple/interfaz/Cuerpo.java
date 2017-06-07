@@ -1,10 +1,13 @@
-package hashsetsimple;
+package hashsetsimple.interfaz;
+
+import hashsetsimple.test.*;
+
 public class Cuerpo 
 {
     public static void main(String[] args) {
         Test t1 = null;
         t1 = new ConstructorTest();
-        t1.test();
+        t1.test();        
         t1 = new UpTest();
         t1.test();
         t1 = new ContainsTest();

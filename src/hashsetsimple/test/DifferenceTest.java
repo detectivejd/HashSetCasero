@@ -1,5 +1,8 @@
-package hashsetsimple;
-public class IntersectionTest extends Test
+package hashsetsimple.test;
+
+import hashsetsimple.structs.MySet;
+
+public class DifferenceTest extends Test
 {
     //<editor-fold desc="relleno de datos">
         private void cargando(MySet<String> set){            
@@ -12,53 +15,55 @@ public class IntersectionTest extends Test
         }
     //</editor-fold>
     //<editor-fold desc="pruebas">
-        private void probando_interseccion_normal() throws Exception {
+        private void probando_diferencia_normal() throws Exception{
             MySet<String>s1 = new MySet();
-            this.cargando(s1);
+            this.cargando(s1); 
             MySet<String>s2 = new MySet();
             s2.add("Deborah");
-            s1.retainAll(s2);
-            this.comprobar_que(s1.size() == 1);
+            s2.add("Tommy");
+            s2.add("Denisse");
+            s1.removeAll(s2);
+            this.comprobar_que(s1.size() == 3);
         }
-        private void probando_interseccion_S1_vacia() throws Exception {
+        private void probando_diferencia_S1_vacia() throws Exception{
             MySet<String>s1 = new MySet();
             MySet<String>s2 = new MySet();
             s2.add("Deborah");
             s2.add("Tommy");
             s2.add("Denisse");
-            s1.retainAll(s2);
+            s1.removeAll(s2);
             this.comprobar_que(s1.isEmpty());
         }
-        private void probando_interseccion_S2_vacia() throws Exception {
+        private void probando_diferencia_S2_vacia() throws Exception{
             MySet<String>s1 = new MySet();
             this.cargando(s1);
             MySet<String>s2 = new MySet();
-            s1.retainAll(s2);
+            s1.removeAll(s2);
             this.comprobar_que(s1.size() == 6);
         }
-        private void probando_interseccion_S1yS2_vacia() throws Exception {
+        private void probando_diferencia_S1yS2_vacia() throws Exception{
             MySet<String>s1 = new MySet();
             MySet<String>s2 = new MySet();
-            s1.retainAll(s2);
+            s1.removeAll(s2);
             this.comprobar_que(s1.isEmpty());
         }
-        private void probando_interseccion_a_S1_mismo() throws Exception {
+        private void probando_diferencia_a_S1_mismo() throws Exception{
             MySet<String>s1 = new MySet();
-            this.cargando(s1);
-            s1.retainAll(s1);
-            this.comprobar_que(s1.size() == 6);
+            cargando(s1);
+            s1.removeAll(s1);
+            this.comprobar_que(s1.isEmpty());
         }
-    //</editor-fold>    
+    //</editor-fold>
     @Override
-    void test() {
+    public void test() {
         try {
-            this.probando_interseccion_normal();
-            this.probando_interseccion_S1_vacia();
-            this.probando_interseccion_S2_vacia();
-            this.probando_interseccion_S1yS2_vacia();
-            this.probando_interseccion_a_S1_mismo();
-        } catch(Exception ex){
+            this.probando_diferencia_normal();
+            this.probando_diferencia_S1_vacia();
+            this.probando_diferencia_S2_vacia();
+            this.probando_diferencia_S1yS2_vacia();
+            this.probando_diferencia_a_S1_mismo();
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }      
+        }
     }    
 }

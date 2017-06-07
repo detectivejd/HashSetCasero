@@ -1,4 +1,7 @@
-package hashsetsimple;
+package hashsetsimple.test;
+
+import hashsetsimple.structs.MySet;
+
 public class ToArrayTest extends Test
 {
     MySet<String> set;
@@ -29,7 +32,7 @@ public class ToArrayTest extends Test
         }
     //</editor-fold>    
     @Override
-    void test() {
+    public void test() {
         try {
             this.probando_toarray1();
             this.probando_toarray2();

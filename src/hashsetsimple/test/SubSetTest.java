@@ -1,4 +1,7 @@
-package hashsetsimple;
+package hashsetsimple.test;
+
+import hashsetsimple.structs.MySet;
+
 public class SubSetTest extends Test
 {
     //<editor-fold desc="relleno de datos">
@@ -45,7 +48,7 @@ public class SubSetTest extends Test
         }
     //</editor-fold>
     @Override
-    void test() {
+    public void test() {
         try {
             this.probando_subconjunto_normal();
             this.probando_subconjunto_S1_vacio();
