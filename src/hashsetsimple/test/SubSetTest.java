@@ -1,7 +1,5 @@
 package hashsetsimple.test;
-
 import hashsetsimple.structs.MySet;
-
 public class SubSetTest extends Test
 {
     //<editor-fold desc="relleno de datos">
@@ -58,6 +56,5 @@ public class SubSetTest extends Test
         } catch(Exception ex){
             ex.printStackTrace();
         }
-    }
-    
+    }    
 }
